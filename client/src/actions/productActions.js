@@ -21,7 +21,7 @@ export const listProducts = () => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: PRODUCT_LIST_FAIL,
-      payload: error.response?.data.message || error.response,
+      payload: error.response?.data.message || error.message,
     });
   }
 };
