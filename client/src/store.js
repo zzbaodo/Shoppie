@@ -4,6 +4,9 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import {
   productReducers,
   productDetailReducers,
+  productDeleteReducers,
+  productCreateReducers,
+  productUpdateReducers,
 } from "./reducers/productReducers";
 import { cartReducer } from "./reducers/cartReducers";
 import {
@@ -11,26 +14,39 @@ import {
   userReducer,
   userRegisterReducer,
   userUpdateProfileReducer,
+  userListReducer,
+  userDeleteReducer,
+  userUpdateReducer,
 } from "./reducers/userReducers";
 import {
   orderCreateReducer,
   orderDetailsReducer,
   orderPaidReducer,
   orderListReducer,
+  orderListAdminReducer,
+  orderDeliveredReducer,
 } from "./reducers/orderReducer";
 
 const reducer = combineReducers({
+  productDelete: productDeleteReducers,
   productList: productReducers,
   productDetail: productDetailReducers,
+  productCreate: productCreateReducers,
+  productUpdate: productUpdateReducers,
   cart: cartReducer,
   user: userReducer,
   userRegister: userRegisterReducer,
   userDetails: userDetailsReducer,
   userUpdate: userUpdateProfileReducer,
+  userList: userListReducer,
+  userDelete: userDeleteReducer,
+  userUpdateAdmin: userUpdateReducer,
   orderCreate: orderCreateReducer,
   orderDetails: orderDetailsReducer,
   orderPaid: orderPaidReducer,
+  orderDelivered: orderDeliveredReducer,
   orderListMy: orderListReducer,
+  orderListAdmin: orderListAdminReducer,
 });
 
 const cartItemsFromStorage = localStorage.getItem("cartItems")

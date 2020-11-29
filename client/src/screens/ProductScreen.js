@@ -65,7 +65,7 @@ const ProductScreen = ({history, match }) => {
                   <ListGroup.Item>
                     <Row>
                       <Col>Price:</Col>
-                      <Col>{product.price}</Col>
+                      <Col>${product.price}</Col>
                     </Row>
                   </ListGroup.Item>
                   <ListGroup.Item>
@@ -83,7 +83,7 @@ const ProductScreen = ({history, match }) => {
                         <Col>
                           <Form.Control
                             as="select"
-                            value={qty}
+                            value= {qty}
                             onChange={(e) => setQty(e.target.value)}
                           >
                             {[...Array(product.countInStock).keys()].map(

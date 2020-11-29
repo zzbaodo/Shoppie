@@ -3,10 +3,14 @@ h3 {
 }
 h1 {
   font-size: 1.8rem;
-  padding: 1rem ;
+  padding: 1rem;
 }
 
 h2 {
   font-size: 1.4rem;
   padding: 0.5rem;
+}
+
+main {
+  min-height: 80vh;
 }
