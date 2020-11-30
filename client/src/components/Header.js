@@ -6,12 +6,13 @@ import { Route } from "react-router-dom";
 import { logOut } from "../actions/userAction";
 import SearchBox from "./SearchBox";
 
-const Header = () => {
+const Header = ({history}) => {
   const user = useSelector((state) => state.user);
   const { userInfo } = user;
   const dispatch = useDispatch();
   const logOutHandler = () => {
     dispatch(logOut());
+    history.push('/')
   };
   return (
     <header>

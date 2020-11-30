@@ -19,6 +19,7 @@ import {
 const OrderScreen = ({ match, history }) => {
   const [sdkReady, setSdkReady] = useState(false);
   const orderId = match.params.id;
+ 
   const dispatch = useDispatch();
   const orderDetails = useSelector((state) => state.orderDetails);
   const { order, loading, error } = orderDetails;
@@ -37,7 +38,6 @@ const OrderScreen = ({ match, history }) => {
       0
     );
   }
-
   useEffect(() => {
     if (!userInfo) {
       history.push("/login");
@@ -57,6 +57,7 @@ const OrderScreen = ({ match, history }) => {
       dispatch({ type: ORDER_PAY_RESET });
       dispatch({ type: ORDER_DELIVER_RESET });
       dispatch(getOrderDetails(orderId));
+      console.log(orderId)
     } else if (!order.isPaid) {
       if (!window.paypal) {
         addPaypalScript();
